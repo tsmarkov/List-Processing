@@ -2,6 +2,7 @@ package listProcessing;
 
 import commands.AppendCommand;
 import commands.Command;
+import commands.ReverseCommand;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,6 +43,8 @@ public class Main {
             case "prepend":
                 break;
             case "reverse":
+                command = new ReverseCommand();
+                command.execute(theList, input);
                 break;
             case "insert":
                 break;
@@ -56,5 +59,7 @@ public class Main {
             case "end":
                 break;
         }
+
+        System.out.println(String.join(" ", theList));
     }
 }
