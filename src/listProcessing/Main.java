@@ -1,5 +1,7 @@
 package listProcessing;
 
+import commands.Command;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,6 +31,7 @@ public class Main {
     }
 
     private static void interpretCommand(String[] input, List<String> theList) {
+        Command command = null;
         switch (input[0].toLowerCase()) {
             case "append":
                 break;
