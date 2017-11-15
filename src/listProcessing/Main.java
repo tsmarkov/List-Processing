@@ -19,7 +19,7 @@ public class Main {
                 break;
             }
 
-            //interpretCommand(commands, theList);
+            interpretCommand(commands, theList);
         }
     }
 }
