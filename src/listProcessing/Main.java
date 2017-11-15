@@ -34,17 +34,18 @@ public class Main {
 
     private static void interpretCommand(String[] input, List<String> theList) {
         Command command = null;
+        String output = "";
 
         switch (input[0].toLowerCase()) {
             case "append":
                 command = new AppendCommand();
-                command.execute(theList, input);
+                output = command.execute(theList, input);
                 break;
             case "prepend":
                 break;
             case "reverse":
                 command = new ReverseCommand();
-                command.execute(theList, input);
+                output = command.execute(theList, input);
                 break;
             case "insert":
                 break;
@@ -59,7 +60,5 @@ public class Main {
             case "end":
                 break;
         }
-
-        System.out.println(String.join(" ", theList));
     }
 }
