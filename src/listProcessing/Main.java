@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main() throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         List<String> theList = Arrays.asList(reader.readLine().split("\\s+"));
 
