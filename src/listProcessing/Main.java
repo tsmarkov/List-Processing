@@ -2,11 +2,13 @@ package listProcessing;
 
 import commands.AppendCommand;
 import commands.Command;
+import commands.InsertCommand;
 import commands.ReverseCommand;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        List<String> theList = Arrays.asList(reader.readLine().split("\\s+"));
+        List<String> theList = new ArrayList(Arrays.asList(reader.readLine().split("\\s+")));
 
 
         while (true) {
@@ -49,6 +51,8 @@ public class Main {
                 output = command.execute(theList, input);
                 break;
             case "insert":
+                command = new InsertCommand();
+                output = command.execute(theList,input);
                 break;
             case "delete":
                 break;
