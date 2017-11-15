@@ -1,9 +1,6 @@
 package listProcessing;
 
-import commands.AppendCommand;
-import commands.Command;
-import commands.InsertCommand;
-import commands.ReverseCommand;
+import commands.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -57,6 +54,8 @@ public class Main {
             case "delete":
                 break;
             case "roll":
+                command = new RollCommand();
+                output = command.execute(theList,input);
                 break;
             case "sort":
                 break;
@@ -64,6 +63,8 @@ public class Main {
                 break;
             case "end":
                 break;
+            default:
+                throw new IllegalArgumentException("Error: invalid command");
         }
 
         return  output;
