@@ -40,6 +40,7 @@ buildNumber.properties
 /out/
 /.idea/
 /List-Processing.iml/
+List_Processing/List-Processing.iml/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
