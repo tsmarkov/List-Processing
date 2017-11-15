@@ -10,9 +10,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
-import com.sun.org.apache.bcel.internal.generic.RET;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-
 public class Main {
 
     public static void main(String[] args) throws IOException {
