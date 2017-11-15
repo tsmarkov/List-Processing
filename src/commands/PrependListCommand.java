@@ -2,12 +2,13 @@ package commands;
 
 import java.util.List;
 
-public class PrependListCommand implements Command{
+public class PrependListCommand extends Command{
 
 
 	@Override
-	public String execute(List<String> list, String[] params) {
+	public void execute(List<String> list, String[] params) {
 		prependList(list, params[1]);
+		
 	}
 	
 	private void prependList (List<String> list, String param){
