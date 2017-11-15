@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class Main {
-	public Main() throws IOException {
+public class Main {
+	public static void main() throws IOException {
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		List<String> theList = Arrays.asList(reader.readLine().split("\\s+"));
