@@ -25,14 +25,15 @@ public class Main {
             }
 
             try {
-                interpretCommand(commands, theList);
+                String operationOutput = interpretCommand(commands, theList);
+                System.out.println(operationOutput);
             } catch (IllegalArgumentException exception) {
                 System.out.println(exception.getMessage());
             }
         }
     }
 
-    private static void interpretCommand(String[] input, List<String> theList) {
+    private static String interpretCommand(String[] input, List<String> theList) {
         Command command = null;
         String output = "";
 
@@ -60,6 +61,8 @@ public class Main {
             case "end":
                 break;
         }
+
+        return  output;
     }
 }
 
