@@ -1,0 +1,11 @@
+package commands;
+
+import java.util.Collections;
+import java.util.List;
+
+public class ReverseCommand extends Command{
+    @Override
+    public void execute(List<String> list, String[] params) {
+        Collections.reverse(list);
+    }
+}
