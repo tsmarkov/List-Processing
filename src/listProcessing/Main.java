@@ -60,6 +60,8 @@ public class Main {
             case "sort":
                 break;
             case "count":
+                command = new CountCommand();
+                output = command.execute(theList, input);
                 break;
             case "end":
                 break;
