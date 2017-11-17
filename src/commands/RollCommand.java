@@ -29,6 +29,10 @@ public class RollCommand extends Command {
     }
 
     private void rollRight(List<String> list) {
+        if (list.isEmpty()) {
+            throw new IllegalArgumentException("List is empty, cannot roll right.");
+        }
+
         String lastElement = list.remove(list.size() - 1);
         list.add(0, lastElement);
     }

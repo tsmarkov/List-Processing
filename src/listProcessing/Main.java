@@ -20,6 +20,7 @@ public class Main {
             String[] commands = reader.readLine().split("\\s+");
 
             if (commands[0].equalsIgnoreCase("end")) {
+                System.out.println("Finished");
                 break;
             }
 
@@ -36,7 +37,7 @@ public class Main {
         Command command = null;
         String output = "";
 
-        switch (input[0].toLowerCase()) {
+        switch (input[0]) {
             case "append":
                 command = new AppendCommand();
                 output = command.execute(theList, input);
@@ -62,8 +63,6 @@ public class Main {
             case "count":
                 command = new CountCommand();
                 output = command.execute(theList, input);
-                break;
-            case "end":
                 break;
             default:
                 throw new IllegalArgumentException("Error: invalid command");
