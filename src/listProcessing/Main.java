@@ -39,28 +39,34 @@ public class Main {
 
         switch (input[0]) {
             case "append":
+                checkNumberOfParams(2,input);
                 command = new AppendCommand();
                 output = command.execute(theList, input);
                 break;
             case "prepend":
+                checkNumberOfParams(2,input);
                 break;
             case "reverse":
                 command = new ReverseCommand();
                 output = command.execute(theList, input);
                 break;
             case "insert":
+                checkNumberOfParams(3,input);
                 command = new InsertCommand();
                 output = command.execute(theList,input);
                 break;
             case "delete":
+                checkNumberOfParams(2,input);
                 break;
             case "roll":
+                checkNumberOfParams(2,input);
                 command = new RollCommand();
                 output = command.execute(theList,input);
                 break;
             case "sort":
                 break;
             case "count":
+                checkNumberOfParams(2,input);
                 command = new CountCommand();
                 output = command.execute(theList, input);
                 break;
@@ -69,6 +75,12 @@ public class Main {
         }
 
         return  output;
+    }
+
+    private static void checkNumberOfParams(int expectedNumberOfParams, String[] input){
+       if(input.length != expectedNumberOfParams){
+           throw new IllegalArgumentException("Error: invalid command parameters");
+       }
     }
 }
 
