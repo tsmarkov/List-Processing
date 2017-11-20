@@ -18,6 +18,7 @@ public class Main {
         List<String> theList = new ArrayList<>();
         Collections.addAll(theList, reader.readLine().split("\\s+"));
 
+        System.out.println(String.join(" ", theList));
 
         while (true) {
             String[] commands = reader.readLine().split("\\s+");
