@@ -82,7 +82,6 @@ public class Main {
 			output = "Finished";
 			break;
 		default:
-			checkNumberOfParams(1, input);
 			throw new IllegalArgumentException("Error: invalid command");
 		}
 
