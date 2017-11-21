@@ -7,8 +7,7 @@ import java.util.List;
 public class DeleteCommand extends Command {
     @Override
     public String execute(List<String> list, String[] params) {
-        //TODO: Validation of index
-
+    	
         delete(list, Integer.parseInt(params[1]));
 
         return String.join(" ", list);
