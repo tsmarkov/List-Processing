@@ -5,6 +5,8 @@ import java.util.List;
 public class RollCommand extends Command {
     @Override
     public String execute(List<String> list, String[] params) {
+        //TODO: Index validation
+
         switch (params[1]) {
             case "left":
                 rollLeft(list);

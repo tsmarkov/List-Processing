@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,34 +42,40 @@ public class Main {
 
         switch (input[0]) {
             case "append":
-                checkNumberOfParams(2,input);
+                checkNumberOfParams(2, input);
                 command = new AppendCommand();
                 output = command.execute(theList, input);
                 break;
             case "prepend":
-                checkNumberOfParams(2,input);
+                checkNumberOfParams(2, input);
+                command = new PrependCommand();
+                output = command.execute(theList, input);
                 break;
             case "reverse":
                 command = new ReverseCommand();
                 output = command.execute(theList, input);
                 break;
             case "insert":
-                checkNumberOfParams(3,input);
+                checkNumberOfParams(3, input);
                 command = new InsertCommand();
-                output = command.execute(theList,input);
+                output = command.execute(theList, input);
                 break;
             case "delete":
-                checkNumberOfParams(2,input);
+                checkNumberOfParams(2, input);
+                command = new DeleteCommand();
+                output = command.execute(theList, input);
                 break;
             case "roll":
-                checkNumberOfParams(2,input);
+                checkNumberOfParams(2, input);
                 command = new RollCommand();
-                output = command.execute(theList,input);
+                output = command.execute(theList, input);
                 break;
             case "sort":
+                command = new SortCommand();
+                output = command.execute(theList, input);
                 break;
             case "count":
-                checkNumberOfParams(2,input);
+                checkNumberOfParams(2, input);
                 command = new CountCommand();
                 output = command.execute(theList, input);
                 break;
@@ -78,13 +83,13 @@ public class Main {
                 throw new IllegalArgumentException("Error: invalid command");
         }
 
-        return  output;
+        return output;
     }
 
-    private static void checkNumberOfParams(int expectedNumberOfParams, String[] input){
-       if(input.length != expectedNumberOfParams){
-           throw new IllegalArgumentException("Error: invalid command parameters");
-       }
+    private static void checkNumberOfParams(int expectedNumberOfParams, String[] input) {
+        if (input.length != expectedNumberOfParams) {
+            throw new IllegalArgumentException("Error: invalid command parameters");
+        }
     }
 }
 
